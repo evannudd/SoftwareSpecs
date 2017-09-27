@@ -17,7 +17,7 @@
  *  retain  a  copy  of  this  assignment  on  its database for the purpose of
  *  future plagiarism checking)
  */
- 
+
 public class FenderTelecasterGuitar implements Guitar {
 
 	@Override

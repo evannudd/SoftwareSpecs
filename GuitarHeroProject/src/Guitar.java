@@ -19,5 +19,5 @@
  */
 
 public interface Guitar {
-    playGuitar();
+	public void playGuitar();
 }
