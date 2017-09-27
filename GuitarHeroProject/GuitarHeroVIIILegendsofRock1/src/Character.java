@@ -1,24 +1,33 @@
 
 public class Character {
-Guitar myGuitar; 
-SoloAct mySolo; 
+	Guitar myGuitar; 
+	SoloActBehavior mySolo; 
+	String name; 
 
-public Character() {}
+	public Character() {}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 	
 	public void setGuitar(Guitar guitar) {
 		myGuitar = guitar;
 	}
 
-	public void setSolo(SoloAct solo) {
+	public void setSoloBehavior(SoloActBehavior solo) {
 		mySolo = solo;
 	}
 
 	public void playGuitar() {
-		myGuitar.play();
+		myGuitar.playGuitar();
 	}
 
-	public void performSolo() {
-		mySolo.perform();
+	public void playSolo() {
+		mySolo.playSolo();
 	}
 
 }

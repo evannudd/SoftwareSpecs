@@ -1,8 +1,8 @@
 
-public class GibsonSG implements Guitar {
+public class GibsonSgGuitar implements Guitar {
 
 	@Override
-	public void play() {
+	public void playGuitar() {
 		System.out.println("I am shredding on a Gibson SG.");
 
 	}

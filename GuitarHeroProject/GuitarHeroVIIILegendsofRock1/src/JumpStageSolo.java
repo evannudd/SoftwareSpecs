@@ -1,8 +1,8 @@
 
-public class JumpOffStage implements SoloAct {
+public class JumpStageSolo implements SoloActBehavior {
 
 	@Override
-	public void perform() {
+	public void playSolo() {
 		System.out.println("I have jumped off of the stage. Owie.");
 
 	}

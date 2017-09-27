@@ -1,8 +1,8 @@
 
-public class GuitarOnFire implements SoloAct {
+public class GuitarFireSolo implements SoloActBehavior {
 	
 	@Override
-	public void perform() {
+	public void playSolo() {
 		System.out.println("I have lit my guitar on fire. Let that be a warning to all other guitars.");
 
 	}
