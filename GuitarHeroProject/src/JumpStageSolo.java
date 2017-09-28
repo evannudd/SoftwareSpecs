@@ -2,9 +2,9 @@
  * Author: Owen Sanders
  * Class: CSI-340-01
  * Assignment: Lab - 02 Guitar Hero Project
- * Due Date: Thursday September 27 2pm
+ * Due Date: Thursday September 28 2pm
  *
- * Description:
+ * Description: A class implementing SoloActBehavior that defines a Solo where a character Jumps off of the stage. 
  *
  * Certification of Authenticity: I  certify  that  this  is  entirely
  *  my  own  work,  except  where  I  have  given fully-documented
