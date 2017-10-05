@@ -1,5 +1,5 @@
 /*
- * Author: 
+ * Author: Owen Sanders
  * Class: CSI-340-01
  * Assignment: Lab - 03
  * Due Date: Thursday October 4 2pm
@@ -20,10 +20,64 @@
  */
 
 public class Bidder implements BidderObserver {
+	
+	String name; 
+
+
+	double CurrentItemPrice = 0; 
+	double MyLastPrice = 0; 
+	Strategy myStrats; 
+	Auctioneer myAuction; 
+	
+	public Auctioneer getMyAuction() {
+		return myAuction;
+	}
+
+	public void setMyAuction(Auctioneer myAuction) {
+		this.myAuction = myAuction;
+	}
+	
+	public void makeBid() { 
+		if (CurrentItemPrice == MyLastPrice && MyLastPrice != 0){ // avoid bidding against yourself. 
+			return; 
+		}
+		else{
+			if(myStrats.defineBid(CurrentItemPrice) == 0)
+			{
+				System.out.println( name + " refuses to bid!");
+			}
+			else
+			{
+				System.out.println( name + " is bidding " + myStrats.defineBid(CurrentItemPrice));
+			}
+			
+			MyLastPrice = myStrats.defineBid(CurrentItemPrice); 
+			myAuction.tryPrice(myStrats.defineBid(CurrentItemPrice));
+		}
+	}
 
 	@Override
-	public void update() {
+	public void update(double newPrice) {
+		
+		CurrentItemPrice = newPrice; 
+		System.out.println( name + " has been alerted that the item now costs $" + CurrentItemPrice);
 
+	}
+
+		public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Strategy getMyStrats() {
+		return myStrats;
+	}
+
+	public void setMyStrats(Strategy myStrats) {
+		this.myStrats = myStrats;
 	}
 
 }

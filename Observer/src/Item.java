@@ -1,11 +1,10 @@
 /*
- * Author: Evan Nudd
+ * Author: Evan Nudd and Owen Sanders
  * Class: CSI-340-01
  * Assignment: Lab - 03
  * Due Date: Thursday October 4 2pm
  *
- * Description: A class implementing the guitar Interface. 
- * This is for the Flying V. It is a cool guitar. 
+ * Description: A class for an Item object
  *
  * Certification of Authenticity: I  certify  that  this  is  entirely
  *  my  own  work,  except  where  I  have  given fully-documented
@@ -20,27 +19,47 @@
  */
 
 public class Item {
-	private Bidder bidder;
+	//private Bidder bidder;
 	private String name;
-	private double currentPrice;
 
-	public void tryPrice() {
 
+	private double currentPrice = 0;
+
+	public boolean tryPrice(double newPrice) {
+		
+		if (newPrice > currentPrice)
+		{
+			currentPrice = newPrice; 
+			return true; 
+		}
+		
+		
+		return false; 
+		
+	}
+	
+	public String getName() {
+		return name;
 	}
 
-	private void updatePrice(double price) {
-		this.currentPrice = price;
+	public void setName(String name) {
+		this.name = name;
 	}
+	
+
+	//private void updatePrice(double price) {
+		//this.currentPrice = price;
+	//}
 
 	public double getPrice() {
 		return currentPrice;
 	}
 
-	public void setBidder(Bidder bid) {
-		this.bidder = bid;
-	}
+	//public void setBidder(Bidder bid) {
+		//this.bidder = bid;
+	//}
 
-	public Bidder getBidder() {
-		return bidder;
-	}
+	//public Bidder getBidder() {
+		//return bidder;
+	//}
 }
