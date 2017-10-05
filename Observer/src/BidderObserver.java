@@ -1,5 +1,5 @@
 /*
- * Author: 
+ * Author: Evan Nudd
  * Class: CSI-340-01
  * Assignment: Lab - 03
  * Due Date: Thursday October 4 2pm

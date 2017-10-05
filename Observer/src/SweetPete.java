@@ -1,5 +1,5 @@
 /*
- * Author: 
+ * Author: Owen Sanders
  * Class: CSI-340-01
  * Assignment: Lab - 03
  * Due Date: Thursday October 4 2pm
@@ -21,19 +21,17 @@
 
 public class SweetPete implements Strategy {
 
-	private double MAXBID = 500000.0; 
-	private double MINBID = 0; 
-	private double STEP = 5000.0; 
-	
-	
+	private double MAXBID = 500000.0;
+	private double MINBID = 0;
+	private double STEP = 5000.0;
+
 	@Override
 	public double defineBid(double currentPrice) {
-		if (currentPrice >= MINBID && currentPrice < MAXBID - STEP)
-		{
-			return currentPrice + STEP; 
+		if (currentPrice >= MINBID && currentPrice < MAXBID - STEP) {
+			return currentPrice + STEP;
 		}
-		
-		return 0; 
+
+		return 0;
 
 	}
 

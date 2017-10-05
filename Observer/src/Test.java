@@ -1,5 +1,5 @@
 /*
- * Author: 
+ * Author: Owen Sanders
  * Class: CSI-340-01
  * Assignment: Lab - 03
  * Due Date: Thursday October 4 2pm
@@ -22,49 +22,42 @@
 public class Test {
 
 	public static void main(String[] args) {
-		
-		Strategy Aggressive = new DrAggressive(); 
-		Strategy Wealth = new TheMillionaire(); 
-		Strategy Sweet = new SweetPete(); 
-		
-		
+
+		Strategy Aggressive = new DrAggressive();
+		Strategy Wealth = new TheMillionaire();
+		Strategy Sweet = new SweetPete();
+
 		Auctioneer Charlie = new Auctioneer();
-		Item FabrigeEgg = new Item(); 
-		
+		Item FabrigeEgg = new Item();
+
 		Charlie.setItem(FabrigeEgg);
-		
-		Bidder Pete = new Bidder(); 
+
+		Bidder Pete = new Bidder();
 		Pete.setName("Pete");
 		Pete.setMyAuction(Charlie);
 		Pete.setMyStrats(Sweet);
-		
-		Bidder Elon = new Bidder(); 
+
+		Bidder Elon = new Bidder();
 		Elon.setName("Ol' Musky");
 		Elon.setMyAuction(Charlie);
 		Elon.setMyStrats(Wealth);
-		
+
 		Bidder Brick = new Bidder();
 		Brick.setName("Brick");
 		Brick.setMyAuction(Charlie);
 		Brick.setMyStrats(Aggressive);
-		
-		
-		
+
 		Charlie.registerObserver(Pete);
 		Charlie.registerObserver(Elon);
 		Charlie.registerObserver(Brick);
-		
-		
-		while(FabrigeEgg.getPrice() < 500000)
-		{
+
+		while (FabrigeEgg.getPrice() < 500000) {
 			Pete.makeBid();
 			Elon.makeBid();
 			Brick.makeBid();
 		}
-		
-		
-		
+
 		FabrigeEgg.setName("Golden Fabrige Egg");
-		
+
 	}
 }

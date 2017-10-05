@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 
 /*
- * Author: 
+ * Author: Evan Nudd
  * Class: CSI-340-01
  * Assignment: Lab - 03
  * Due Date: Thursday October 4 2pm
@@ -24,8 +24,8 @@ import java.util.ArrayList;
 public class Auctioneer implements AuctioneerSubject {
 
 	private ArrayList<Bidder> bidders = new ArrayList<Bidder>();
-	
-	private Item item; 
+
+	private Item item;
 
 	@Override
 	public void registerObserver(Bidder bid) {
@@ -47,15 +47,13 @@ public class Auctioneer implements AuctioneerSubject {
 	public void setItem(Item item) {
 		this.item = item;
 	}
-	
-	public void tryPrice(double newPrice) // bidders need to bid through the auctioneer.  
+
+	public void tryPrice(double newPrice) // bidders need to bid through the
+											// auctioneer.
 	{
-		
-		
-		
-		if (item.tryPrice(newPrice))
-		{
-			notifyObservers(); 
+
+		if (item.tryPrice(newPrice)) {
+			notifyObservers();
 		}
 	}
 

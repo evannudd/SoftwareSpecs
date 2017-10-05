@@ -1,11 +1,10 @@
 /*
- * Author: 
+ * Author: Owen Sanders
  * Class: CSI-340-01
  * Assignment: Lab - 03
  * Due Date: Thursday October 4 2pm
  *
- * Description: A class implementing the guitar Interface. 
- * This is for the Flying V. It is a cool guitar. 
+ * Description: The millionare strategy
  *
  * Certification of Authenticity: I  certify  that  this  is  entirely
  *  my  own  work,  except  where  I  have  given fully-documented
@@ -20,20 +19,20 @@
  */
 
 public class TheMillionaire implements Strategy {
-	
-	private double MAXBID = 1000000.0; 
-	private double MINBID = 100000.0; // They won't even try if it's not worth something... 
-	private double STEP = 10000.0; 
-	
+
+	private double MAXBID = 1000000.0;
+	private double MINBID = 100000.0; // They won't even try if it's not worth
+										// something...
+	private double STEP = 10000.0;
+
 	@Override
-	public double defineBid(double currentPrice ) {
-		
-		if (currentPrice >= MINBID && currentPrice < MAXBID - STEP)
-		{
-			return currentPrice + STEP; 
+	public double defineBid(double currentPrice) {
+
+		if (currentPrice >= MINBID && currentPrice < MAXBID - STEP) {
+			return currentPrice + STEP;
 		}
-		
-		return 0; 
+
+		return 0;
 	}
 
 }
