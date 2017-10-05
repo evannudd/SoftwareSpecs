@@ -21,9 +21,20 @@
 
 public class DrAggressive implements Strategy {
 
+	private double MAXBID = 200000.0; 
+	private double MINBID = 0; 
+	private double STEP = 20000.0; 
+	
+	
 	@Override
-	public void defineBid() {
-
+	public double defineBid(double currentPrice) {
+		
+		if (currentPrice >= MINBID && currentPrice < (MAXBID - STEP))
+		{
+			return currentPrice + STEP; 
+		}
+		
+		return 0; 
 	}
 
 }

@@ -20,10 +20,20 @@
  */
 
 public class TheMillionaire implements Strategy {
-
+	
+	private double MAXBID = 1000000.0; 
+	private double MINBID = 100000.0; // They won't even try if it's not worth something... 
+	private double STEP = 10000.0; 
+	
 	@Override
-	public void defineBid() {
-
+	public double defineBid(double currentPrice ) {
+		
+		if (currentPrice >= MINBID && currentPrice < MAXBID - STEP)
+		{
+			return currentPrice + STEP; 
+		}
+		
+		return 0; 
 	}
 
 }

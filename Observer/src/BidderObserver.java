@@ -20,5 +20,5 @@
  */
 
 public interface BidderObserver {
-	public void update();
+	public void update(double currentPrice);
 }

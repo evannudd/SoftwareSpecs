@@ -20,5 +20,6 @@
  */
 
 public interface Strategy {
-	public void defineBid();
+	
+	public double defineBid(double currentPrice);
 }

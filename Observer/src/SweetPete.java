@@ -19,11 +19,21 @@
  *  future plagiarism checking)
  */
 
-public class Etc implements Strategy {
+public class SweetPete implements Strategy {
 
+	private double MAXBID = 500000.0; 
+	private double MINBID = 0; 
+	private double STEP = 5000.0; 
+	
+	
 	@Override
-	public void defineBid() {
-		// TODO Auto-generated method stub
+	public double defineBid(double currentPrice) {
+		if (currentPrice >= MINBID && currentPrice < MAXBID - STEP)
+		{
+			return currentPrice + STEP; 
+		}
+		
+		return 0; 
 
 	}
 

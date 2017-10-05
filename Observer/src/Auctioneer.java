@@ -24,6 +24,8 @@ import java.util.ArrayList;
 public class Auctioneer implements AuctioneerSubject {
 
 	private ArrayList<Bidder> bidders = new ArrayList<Bidder>();
+	
+	private Item item; 
 
 	@Override
 	public void registerObserver(Bidder bid) {
@@ -38,10 +40,29 @@ public class Auctioneer implements AuctioneerSubject {
 		}
 	}
 
+	public Item getItem() {
+		return item;
+	}
+
+	public void setItem(Item item) {
+		this.item = item;
+	}
+	
+	public void tryPrice(double newPrice) // bidders need to bid through the auctioneer.  
+	{
+		
+		
+		
+		if (item.tryPrice(newPrice))
+		{
+			notifyObservers(); 
+		}
+	}
+
 	@Override
 	public void notifyObservers() {
 		for (Bidder bid : bidders) {
-			bid.update();
+			bid.update(item.getPrice());
 		}
 	}
 
