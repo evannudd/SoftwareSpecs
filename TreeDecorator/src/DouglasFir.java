@@ -1,10 +1,10 @@
 /*
- * Author: 
+ * Author:  Evan Nudd
  * Class: CSI-340-01
  * Assignment: Lab - 04
  * Due Date: Thursday October 12 midnight
  *
- * Description: 
+ * Description: A type of tree
  *
  * Certification of Authenticity: I  certify  that  this  is  entirely
  *  my  own  work,  except  where  I  have  given fully-documented
