@@ -4,7 +4,7 @@
  * Assignment: Lab - 04
  * Due Date: Thursday October 12 midnight
  *
- * Description: A Ruffles decoration
+ * Description: Runs the project
  *
  * Certification of Authenticity: I  certify  that  this  is  entirely
  *  my  own  work,  except  where  I  have  given fully-documented
@@ -18,23 +18,19 @@
  *  future plagiarism checking)
  */
 
-public class Ruffles extends TreeDecorator {
+public class Main {
 
-	private double cost = 1;
+	public static void main(String[] args) {
+		Tree myTree = new ColoradoBlueSpruce();
 
-	private String description = "some lacey ruffles, ";
+		myTree = new BallsBlue(myTree);
+		myTree = new BallsBlue(myTree);
+		myTree = new LEDs(myTree);
+		myTree = new Star(myTree);
+		myTree = new Star(myTree);
 
-	protected Tree beautifulTree;
+		myTree.printAllTreeInfo();
 
-	public Ruffles(Tree myTree) {
-		super(myTree);
 	}
 
-	public Double getCost() {
-		return super.getCost() + cost;
-	}
-
-	public String getDescription() {
-		return super.getDescription() + description;
-	}
 }
